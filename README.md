@@ -31,8 +31,9 @@ This repository contains a Python script for analyzing customer behavior data fr
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/MojdehHosseini/customer-behavior-analysis-registration-to-first-order.git
+   cd customer-behavior-analysis-registration-to-first-order
+
    ```
 
 2. **Install Dependencies**:
