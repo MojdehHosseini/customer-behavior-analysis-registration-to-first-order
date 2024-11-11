@@ -1,13 +1,17 @@
 import psycopg2
 import pandas as pd
 from sshtunnel import SSHTunnelForwarder
+import os
+
+SSH_KEY = os.environ('SSH_KEY_PINKET')
+SSH_USERNAME =  os.environ('SSH_USERNAME-PINKET')
 
 try:
     # Create an SSH tunnel
     tunnel = SSHTunnelForwarder(
         ('91.98.99.106', 12091),
-        ssh_username='a.sabaghi',
-        ssh_password='INCovwbATdhcZJfoRkxK',
+        ssh_username=SSH_USERNAME,
+        ssh_password=SSH_KEY,
         remote_bind_address=('localhost', 5432),
         local_bind_address=('localhost', 5433),  # could be any available port
     )
@@ -22,8 +26,8 @@ try:
     # Create a database connection
     conn = psycopg2.connect(
         database='VShop',
-        user='a.sabaghi',
-        password='RQM1PpRyvHd4jiVPUeii',
+        user=SSH_USERNAME,
+        password=SSH_KEY,
         # host='postgres-replica1.pinket.local',
         # port='5432',
         host='localhost',
